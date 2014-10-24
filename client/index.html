@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="clientApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Yolo</title>
+
+    <!--  Links -->
+	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="styles/css/importer.css">
+</head>
+<body>
+	<div ui-view id="main-ui-view"></div>
+
+    <!--
+        Scripts
+            -->
+
+    <!-- Vendor Scripts -->
+    <script src="vendor/jquery.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="vendor/angular.js"></script>
+    <script src="vendor/angular-ui-router.js"></script>
+    <script src="vendor/angular-animate.js"></script>
+    <script src="vendor/satellizer.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="app/app.js"></script>
+    <script src="app/controllers/admin/DashboardCtrl.js"></script>
+    <script src="app/controllers/public/HomeCtrl.js"></script>
+    <script src="app/controllers/public/LoginCtrl.js"></script>
+    <script src="app/services/AccessLevels.js"></script>
+    <script src="app/services/Auth.js"></script>
+    <script src="app/routes.js"></script>
+</body>
+</html>
