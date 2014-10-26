@@ -9,5 +9,5 @@ server/Thumbs.db
 
 client/.sass-cache
 client/node_modules
-
+client/uploads
 .idea

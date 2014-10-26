@@ -14,3 +14,5 @@
 Route::post('auth/login', 'AuthController@login');
 
 Route::get('{angular?}', [ 'uses' => 'HomeController@index' ])->where('angular', '.*');
+Route::resource('posts', 'PostController', ['except' => ['create', 'show']]);
+Route::resource('media', 'MediaController', ['except' => ['create', 'show']]);

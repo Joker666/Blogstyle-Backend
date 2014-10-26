@@ -34,5 +34,34 @@ app.config(function($stateProvider, $urlRouterProvider, AccessLevels) {
             url: '/dashboard',
             templateUrl: 'templates/admin/dashboard.html',
             controller: 'DashboardCtrl'
-        });
+        })
+
+        //Posts
+        .state('user.dashboard.post', {
+            url: '/posts'
+        })
+        .state('user.dashboard.post.create', {
+            url: '/create',
+            views: {
+                '@user.dashboard': {
+                    templateUrl: 'templates/admin/posts/create_post.html',
+                    controller: 'CreatePostCtrl'
+                }
+            }
+        })
+
+        //Media
+        .state('user.dashboard.media', {
+            url: '/media'
+        })
+        .state('user.dashboard.media.create', {
+            url: '/create',
+            views: {
+                '@user.dashboard': {
+                    templateUrl: 'templates/admin/media/create_media.html',
+                    controller: 'CreateMediaCtrl'
+                }
+            }
+        })
+    ;
 });

@@ -1,0 +1,8 @@
+<section>
+    <h1>Add New Post</h1>
+    <input type="text" ng-model="title"/>
+
+    <br>
+    <textarea froala="options" ng-model="myHtml" froala-event-on-paste="onPaste" froala-event-focus="onEvent" froala-event-indent="onEvent"></textarea>
+    <button class="btn btn-primary" ng-click="save()">Save</button>
+</section>

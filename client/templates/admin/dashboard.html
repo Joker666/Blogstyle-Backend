@@ -2,10 +2,11 @@
 <button class="btn btn-primary" ng-click="logout()" id="logout-button">Logout</button>
 <section id="left-nav">
     <ul id="menu">
-        <li><a href="">Posts</a></li>
+        <li><a ui-sref="user.dashboard.post.create">Posts</a></li>
         <li><a href="">Category</a></li>
-        <li><a href="">Media</a></li>
+        <li><a ui-sref="user.dashboard.media.create">Media</a></li>
         <li><a href="">Users</a></li>
     </ul>
 </section>
+<div ui-view id="dashboard-body"></div>
 </div>
