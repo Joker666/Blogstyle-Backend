@@ -18,7 +18,7 @@
       loginRoute: '/login',
       signupRoute: '/signup',
       tokenName: 'token',
-      tokenPrefix: 'satellizer',
+      tokenPrefix: 'backend',
       unlinkUrl: '/auth/unlink/',
       providers: {
         google: {

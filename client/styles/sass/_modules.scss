@@ -78,36 +78,99 @@
 //============================================
 //Left Nav
 //============================================
-#left-nav{
-    position: relative;
-    @include span(3);
-    background-color: deepskyblue;
-    #menu{
-        margin: 12px 0 0;
-        padding: 0;
-        list-style: none;
-        li{
-            border: none;
-            min-height: 34px;
-            position: relative;
-            a{
-                color: #ffffff;
-            }
-        }
+/* Sidebar Menu Styles */
+.navbar-static-side ul li {
+    border-bottom: 1px solid #e7e7e7;
+}
+.sidebar-search {
+    padding: 15px;
+}
+
+.arrow {
+    float: right;
+}
+
+.fa.arrow:before {
+    content: "\f104";
+}
+
+.active > a > .fa.arrow:before {
+    content: "\f107";
+}
+
+.nav-second-level li,
+.nav-third-level li {
+    border-bottom: none !important;
+}
+
+.nav-second-level li a {
+    padding-left: 37px;
+}
+
+.nav-third-level li a {
+    padding-left: 52px;
+}
+
+@media(min-width:768px) {
+    .navbar-static-side {
+        z-index: 1;
+        position: absolute;
+        width: 250px;
+        height: 100%;
+    }
+
+    .navbar-top-links .dropdown-messages,
+    .navbar-top-links .dropdown-tasks,
+    .navbar-top-links .dropdown-alerts {
+        margin-left: auto;
     }
 }
-#logout-button{
-    float: right;
+
+/*    --------------------------------------------------
+	:: Top Nav
+	-------------------------------------------------- */
+.navbar-top-links li.dropdown a.dropdown-toggle {
+    padding: 15px;
+    min-height: 50px;
+}
+#logout{
+    cursor: pointer;
 }
 
 //============================================
 //Dashboard Body
 //============================================
 #dashboard-body{
-    @include pre(5%);
-    @include span(18);
+    padding-top: 50px;
+}
+#page-wrapper {
+    padding: 0 15px;
+//    min-height: 568px;
+    background-color: #fff;
 }
 
+@media(min-width:768px) {
+    #page-wrapper {
+        position: inherit;
+        margin: 0 0 0 250px;
+        padding: 0 30px;
+//        min-height: 1300px;
+        border-left: 1px solid #e7e7e7;
+    }
+}
+
+.tab-pane > .form-group{
+    padding-top: 10px;
+}
+
+#dropzone{
+    height: 200px;
+    p{
+        font-size: 2.5em;
+        @include span(isolate 300px at 10);
+        margin-top: 50px;
+    }
+}
 canvas {
     background-color: #f3f3f3;
     box-shadow: 3px 3px 3px 0 #e3e3e3;

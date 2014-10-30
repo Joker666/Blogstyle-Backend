@@ -14,11 +14,15 @@ class CreateMediaTable extends Migration {
 	{
 		Schema::create('media', function(Blueprint $table)
 		{
-			$table->increments('id');
-            $table->string('title')->nullable();
+            $table->increments('id');
+            $table->string('title');
             $table->string('media');
-            $table->string('mime')->nullable();
-			$table->timestamps();
+            $table->string('mime');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('post_id')->unsigned()->nullable();
+            $table->foreign('post_id')->references('id')->on('posts');
+            $table->timestamps();
 		});
 	}
 

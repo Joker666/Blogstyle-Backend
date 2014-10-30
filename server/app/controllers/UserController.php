@@ -8,8 +8,14 @@ class UserController extends \BaseController {
 
     function __construct(UserUtils $userUtils)
     {
-        $this->$userUtils = $userUtils;
+        $this->userUtils = $userUtils;
     }
+
+    public function getUser()
+    {
+        return $this->userUtils->getCurrentUser();
+    }
+
 
 	/**
 	 * Display a listing of the resource.

@@ -1,7 +1,16 @@
 <?php
 
+use YOLO\UserUtils;
+
 class MediaController extends \BaseController {
 
+
+    protected $userUtils;
+
+    function __construct(UserUtils $userUtils)
+    {
+        $this->userUtils = $userUtils;
+    }
 	/**
 	 * Display a listing of the resource.
 	 * GET /media
@@ -23,6 +32,8 @@ class MediaController extends \BaseController {
 	{
         $date = new Date();
 		$media = new Media;
+        $user = $this->userUtils->getCurrentUser();
+
         $allowedExts = array("gif", "jpeg", "jpg", "png", 'JPG', 'JPEG', 'PNG', 'GIF');
         $file = Input::file('file');
         $extension = $file->getClientOriginalExtension();
@@ -50,6 +61,7 @@ class MediaController extends \BaseController {
             $media->title = $temp[0];
             $media->media = $filename;
             $media->mime = $file->getMimeType();
+            $media->user_id = $user->id;
 
             $upload_success = Image::make($file)->save($dayDir .'/' .$filename);
 

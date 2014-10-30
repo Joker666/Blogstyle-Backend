@@ -1,7 +1,10 @@
-app.controller('CreateMediaCtrl', function ($scope, FileUploader) {
+app.controller('CreateMediaCtrl', function ($scope, FileUploader, $auth) {
 
     var uploader = $scope.uploader = new FileUploader({
-        url: 'http://localhost:8000/media'
+        url: '/media',
+        headers : {
+            'Authorization': 'Bearer ' + $auth.getToken()
+        }
     });
 
     // FILTERS

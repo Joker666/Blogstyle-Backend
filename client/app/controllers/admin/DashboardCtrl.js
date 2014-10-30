@@ -1,5 +1,4 @@
-app.controller('DashboardCtrl', function($scope, $auth){
-    $scope.yolo = 'yolo';
+app.controller('DashboardCtrl', function($scope, $auth, CurrentUser){
     $scope.logout = function(){
         $auth.logout()
             .then(function() {

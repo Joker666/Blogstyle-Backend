@@ -28,6 +28,18 @@ app.config(function($stateProvider, $urlRouterProvider, AccessLevels) {
             template: '<ui-view/>',
             data: {
                 access: AccessLevels.user
+            },
+            resolve:{
+                CurrentUserObj:  function(Account, CurrentUser){
+                    return Account.getProfile().then(function(response) {
+                        //CurrentUser = response.data;
+                        CurrentUser.id = parseInt(response.data.id);
+                        CurrentUser.email = response.data.email;
+                        CurrentUser.username = response.data.username;
+                        CurrentUser.firstName = response.data.first_name;
+                        CurrentUser.lastName = response.data.last_name;
+                    });
+                }
             }
         })
         .state('user.dashboard', {
@@ -38,14 +50,25 @@ app.config(function($stateProvider, $urlRouterProvider, AccessLevels) {
 
         //Posts
         .state('user.dashboard.post', {
-            url: '/posts'
+            url: '/posts',
+            templateUrl: 'templates/admin/posts/all_posts.html',
+            controller: 'PostCtrl'
         })
         .state('user.dashboard.post.create', {
             url: '/create',
             views: {
                 '@user.dashboard': {
-                    templateUrl: 'templates/admin/posts/create_post.html',
-                    controller: 'CreatePostCtrl'
+                    templateUrl: 'templates/admin/posts/create_update_post.html',
+                    controller: 'CreateUpdatePostCtrl'
+                }
+            }
+        })
+        .state('user.dashboard.post.edit', {
+            url: '/edit/:id',
+            views: {
+                '@user.dashboard': {
+                    templateUrl: 'templates/admin/posts/create_update_post.html',
+                    controller: 'CreateUpdatePostCtrl'
                 }
             }
         })

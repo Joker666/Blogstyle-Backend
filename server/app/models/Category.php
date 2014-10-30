@@ -9,4 +9,11 @@ class Category extends \Eloquent {
      * @var string
      */
     protected $table = 'categories';
+
+    protected $timestamps = false;
+
+    public function posts()
+    {
+        return $this->hasMany('Post');
+    }
 }

@@ -3,13 +3,15 @@ var app = angular.module('clientApp', [
     'ngAnimate',
     'satellizer',
     'froala',
-    'angularFileUpload'
+    'angularFileUpload',
+    'ui.bootstrap',
+    'toaster'
 ]);
 
 app.value('froalaConfig', {
     inlineMode: false,
-    height: 400,
-    placeholder: 'Enter Text Here',
+    height: 350,
+    placeholder: '',
     events : {
         align : function(e, editor, alignment){
             console.log(alignment + ' aligned');

@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder {
                 'username' => 'joker666',
                 'first_name' => 'Hasan',
                 'last_name' => 'Rafi',
-                'password' => Hash::make('naughty5'),
+                'password' => Hash::make('12345'),
 			]);
 		}
 	}

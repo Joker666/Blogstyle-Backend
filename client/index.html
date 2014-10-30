@@ -9,10 +9,13 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="vendor/FroalaWysiwygEditor/css/froala_editor.min.css" />
     <link rel="stylesheet" href="vendor/FroalaWysiwygEditor/css/froala_style.min.css" />
+    <link rel="stylesheet" href="vendor/sweetalert/sweet-alert.css"/>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.4/toaster.css" rel="stylesheet" />
 	<link rel="stylesheet" href="styles/css/importer.css">
 </head>
 <body>
 	<div ui-view></div>
+    <toaster-container></toaster-container>
 
     <!--
         Scripts
@@ -24,8 +27,12 @@
     <script src="vendor/angular.js"></script>
     <script src="vendor/angular-ui-router.js"></script>
     <script src="vendor/angular-animate.js"></script>
+    <script src="vendor/ui-bootstrap-tpls-0.11.2.js"></script>
     <script src="vendor/satellizer.js"></script>
     <script src="vendor/FroalaWysiwygEditor/js/froala_editor.min.js"></script>
+    <script src="vendor/angular-file-upload.js"></script>
+    <script src="vendor/sweetalert/sweet-alert.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.4/toaster.js"></script>
     <!-- Froala Plugins -->
     <script src="vendor/FroalaWysiwygEditor/js/plugins/tables.min.js"></script>
     <script src="vendor/FroalaWysiwygEditor/js/plugins/video.min.js"></script>
@@ -39,18 +46,21 @@
     <script src="vendor/FroalaWysiwygEditor/js/plugins/char_counter.min.js"></script>
     <script src="vendor/angular-froala.js"></script>
     <script src="vendor/froala-sanitize.js"></script>
-    <script src="vendor/angular-file-upload.js"></script>
 
     <!-- Custom Scripts -->
     <script src="app/app.js"></script>
     <script src="app/controllers/admin/DashboardCtrl.js"></script>
     <script src="app/controllers/admin/Posts/PostCtrl.js"></script>
-    <script src="app/controllers/admin/Posts/CreatePostCtrl.js"></script>
+    <script src="app/controllers/admin/Posts/CreateUpdatePostCtrl.js"></script>
     <script src="app/controllers/admin/Media/CreateMediaCtrl.js"></script>
     <script src="app/controllers/public/HomeCtrl.js"></script>
     <script src="app/controllers/public/LoginCtrl.js"></script>
     <script src="app/services/AccessLevels.js"></script>
     <script src="app/services/Auth.js"></script>
+    <script src="app/services/Account.js"></script>
+    <script src="app/services/CurrentUser.js"></script>
+    <script src="app/services/PostService.js"></script>
+    <script src="app/services/sweet-alert.js"></script>
     <script src="app/directives/ngThumb.js"></script>
     <script src="app/routes.js"></script>
 </body>

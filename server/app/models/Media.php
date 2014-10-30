@@ -9,4 +9,14 @@ class Media extends \Eloquent {
      * @var string
      */
     protected $table = 'media';
+
+    public function user()
+    {
+        return $this->belongsTo('User');
+    }
+
+    public function post()
+    {
+        return $this->belongsTo('Post');
+    }
 }
