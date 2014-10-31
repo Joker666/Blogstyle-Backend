@@ -5,7 +5,8 @@ var app = angular.module('clientApp', [
     'froala',
     'angularFileUpload',
     'ui.bootstrap',
-    'toaster'
+    'toaster',
+    'akoenig.deckgrid'
 ]);
 
 app.value('froalaConfig', {

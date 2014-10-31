@@ -1,0 +1,13 @@
+{
+  "name": "Blogstyle-Backend",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Joker666/Blogstyle-Backend",
+  "authors": [
+    "Hasan Rafi <mr.k779@outlook.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular-deckgrid": "~0.4.4"
+  }
+}

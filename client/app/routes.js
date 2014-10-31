@@ -75,7 +75,9 @@ app.config(function($stateProvider, $urlRouterProvider, AccessLevels) {
 
         //Media
         .state('user.dashboard.media', {
-            url: '/media'
+            url: '/media',
+            templateUrl: 'templates/admin/media/all_media.html',
+            controller: 'MediaCtrl'
         })
         .state('user.dashboard.media.create', {
             url: '/create',

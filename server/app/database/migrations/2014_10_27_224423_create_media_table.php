@@ -18,6 +18,7 @@ class CreateMediaTable extends Migration {
             $table->string('title');
             $table->string('media');
             $table->string('mime');
+            $table->string('src');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('post_id')->unsigned()->nullable();

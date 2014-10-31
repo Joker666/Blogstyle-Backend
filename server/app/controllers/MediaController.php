@@ -19,7 +19,7 @@ class MediaController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		return Media::all();
 	}
 
 	/**
@@ -66,6 +66,7 @@ class MediaController extends \BaseController {
             $upload_success = Image::make($file)->save($dayDir .'/' .$filename);
 
             $returnPath = url("/uploads/" . $date->year . '/' . $date->month . '/' .$date->day . '/' . $filename);
+            $media->src = $returnPath;
             if( $upload_success ) {
                 $media->save();
                 return Response::json(['link' => $returnPath, 'message' => 'saved successfully!']);
